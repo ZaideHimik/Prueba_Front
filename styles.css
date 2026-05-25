@@ -1,0 +1,324 @@
+/* ===========================
+   VARIABLES DE TEMA (MODIFICA AQUÍ COLORES Y TIPOGRAFÍA)
+   =========================== */
+:root {
+    /* Colores principales - CAMBIA ESTOS A TU GUSTO */
+    --color-bg: #0b0c10;
+    --color-bg-secondary: #14151c;
+    --color-primary: #1f7cff;
+    --color-primary-light: #4aa3ff;
+    --color-accent: #ff4d6a;
+
+    --color-text: #f5f5f5;
+    --color-text-muted: #b0b3c1;
+
+    /* Tipografía base */
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    /* Ancho máximo del contenido */
+    --max-width: 1200px;
+}
+
+/* ===========================
+   RESETEO BÁSICO
+   =========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Quita subrayado y color azul por defecto en links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* Contenedor centrado reutilizable */
+.section-title,
+.hero,
+.games,
+.features,
+.contact {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ===========================
+   HEADER Y NAVEGACIÓN
+   =========================== */
+.site-header {
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid #20232a;
+}
+
+.site-header .logo,
+.site-header .main-nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+}
+
+/* NAV */
+.main-nav {
+    padding-bottom: 0.5rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ===========================
+   SECCIÓN HERO
+   =========================== */
+.hero {
+    padding: 3rem 1.5rem 2rem;
+}
+
+.hero-content {
+    background: linear-gradient(135deg, #14151c, #191c27);
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Botón principal del hero */
+.hero-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-1px);
+}
+
+/* ===========================
+   TÍTULOS DE SECCIÓN
+   =========================== */
+.section-title {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   CATÁLOGO DE JUEGOS
+   =========================== */
+.games {
+    padding-bottom: 2rem;
+}
+
+/* Grid de tarjetas */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Tarjeta individual */
+.game-card {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.game-image img {
+    width: 100%;
+    display: block;
+    height: 160px; /* MODIFICA ALTURA DE PORTADAS AQUÍ */
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 1rem 1.1rem 1.25rem;
+}
+
+.game-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.game-genre,
+.game-platform,
+.game-price {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.15rem;
+}
+
+.game-price {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.game-description {
+    font-size: 0.9rem;
+    margin: 0.75rem 0 1rem;
+    color: var(--color-text-muted);
+}
+
+/* Botón en tarjeta */
+.game-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #20232a;
+    color: var(--color-primary-light);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.game-btn:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ===========================
+   SECCIÓN "POR QUÉ COMPRAR AQUÍ"
+   =========================== */
+.features {
+    padding-bottom: 2.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.4rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.feature-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* ===========================
+   SECCIÓN CONTACTO
+   =========================== */
+.contact {
+    padding-bottom: 3rem;
+}
+
+.contact p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+    background-color: #05060a;
+    border-top: 1px solid #20232a;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* ===========================
+   RESPONSIVE (AJUSTES PARA MÓVIL)
+   =========================== */
+@media (max-width: 600px) {
+    .site-header .logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}
