@@ -2,20 +2,17 @@
    VARIABLES DE TEMA (MODIFICA AQUÍ COLORES Y TIPOGRAFÍA)
    =========================== */
 :root {
-    /* Colores principales - CAMBIA ESTOS A TU GUSTO */
-    --color-bg: #0b0c10;
-    --color-bg-secondary: #14151c;
-    --color-primary: #1f7cff;
-    --color-primary-light: #4aa3ff;
-    --color-accent: #ff4d6a;
+    /* Tema gamer: fondo oscuro suave + acentos neón */
+    --color-bg: #0b1120;              /* azul muy oscuro (no negro) */
+    --color-bg-secondary: #111827;    /* paneles / tarjetas */
+    --color-primary: #6366f1;         /* violeta eléctrico */
+    --color-primary-light: #22c55e;   /* verde neón suave */
+    --color-accent: #f97316;          /* naranja para precios/ofertas */
 
-    --color-text: #f5f5f5;
-    --color-text-muted: #b0b3c1;
+    --color-text: #e5e7eb;            /* texto principal gris claro */
+    --color-text-muted: #9ca3af;      /* texto secundario gris medio */
 
-    /* Tipografía base */
     --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-    /* Ancho máximo del contenido */
     --max-width: 1200px;
 }
 
@@ -51,7 +48,8 @@ h1, h2, h3 {
 .hero,
 .games,
 .features,
-.contact {
+.contact,
+.offers {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -61,8 +59,8 @@ h1, h2, h3 {
    HEADER Y NAVEGACIÓN
    =========================== */
 .site-header {
-    background-color: var(--color-bg-secondary);
-    border-bottom: 1px solid #20232a;
+    background-color: #020617;
+    border-bottom: 1px solid #1f2937;
 }
 
 .site-header .logo,
@@ -120,15 +118,16 @@ h1, h2, h3 {
 }
 
 .hero-content {
-    background: linear-gradient(135deg, #14151c, #191c27);
+    background: radial-gradient(circle at top left, #1d4ed8, #0b1120);
     border-radius: 1rem;
     padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1d4ed8;
 }
 
 .hero-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 0.75rem;
 }
 
@@ -141,25 +140,27 @@ h1, h2, h3 {
 /* Botón principal del hero */
 .hero-btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.6rem;
     background-color: var(--color-primary);
     color: #ffffff;
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
 }
 
 .hero-btn:hover {
     background-color: var(--color-primary-light);
     transform: translateY(-1px);
+    box-shadow: 0 14px 35px rgba(34, 197, 94, 0.5);
 }
 
 /* ===========================
    TÍTULOS DE SECCIÓN
    =========================== */
 .section-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
 }
@@ -174,7 +175,7 @@ h1, h2, h3 {
 /* Grid de tarjetas */
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -186,7 +187,15 @@ h1, h2, h3 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1f2937;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+    border-color: var(--color-primary);
 }
 
 .game-image img {
@@ -229,7 +238,7 @@ h1, h2, h3 {
 .game-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #20232a;
+    background-color: #020617;
     color: var(--color-primary-light);
     border-radius: 999px;
     font-size: 0.85rem;
@@ -245,6 +254,25 @@ h1, h2, h3 {
 /* ===========================
    SECCIÓN "POR QUÉ COMPRAR AQUÍ"
    =========================== */
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+    background-color: #e5e7eb; /* círculo claro */
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    display: block;
+}
+
 .features {
     padding-bottom: 2.5rem;
 }
@@ -259,7 +287,8 @@ h1, h2, h3 {
     background-color: var(--color-bg-secondary);
     border-radius: 0.75rem;
     padding: 1.25rem 1.4rem;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1f2937;
 }
 
 .feature-title {
@@ -270,6 +299,88 @@ h1, h2, h3 {
 .feature-text {
     font-size: 0.9rem;
     color: var(--color-text-muted);
+}
+
+/* ===========================
+   SECCIÓN OFERTAS
+   =========================== */
+.offers {
+    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.offer-card {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.4rem 1.4rem;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+    border: 1px solid #1f2937;
+}
+
+.offer-badge {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    background-color: var(--color-accent);
+    color: #111827;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.offer-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.offer-platform {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.offer-old-price {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+    margin-bottom: 0.15rem;
+}
+
+.offer-new-price {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.offer-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.offer-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.offer-btn:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-1px);
 }
 
 /* ===========================
@@ -284,12 +395,28 @@ h1, h2, h3 {
     color: var(--color-text-muted);
 }
 
+/* Bloque de datos de contacto */
+.contact-info {
+    margin-top: 1rem;
+    font-style: normal;
+}
+
+.contact-info p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.contact-info a[href^="mailto"],
+.contact-info a[href^="tel"] {
+    color: var(--color-primary-light);
+}
+
 /* ===========================
    FOOTER
    =========================== */
 .site-footer {
-    background-color: #05060a;
-    border-top: 1px solid #20232a;
+    background-color: #020617;
+    border-top: 1px solid #1f2937;
     padding: 1rem 1.5rem;
     text-align: center;
 }
@@ -300,8 +427,14 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   RESPONSIVE (AJUSTES PARA MÓVIL)
+   RESPONSIVE (AJUSTES PARA MÓVIL/TABLET)
    =========================== */
+@media (max-width: 900px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     .site-header .logo {
         flex-direction: column;
@@ -319,6 +452,10 @@ h1, h2, h3 {
     }
 
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
     }
 }
