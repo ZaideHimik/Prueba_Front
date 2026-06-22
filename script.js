@@ -1,3 +1,4 @@
+// Se ejecuta cuando el HTML ya está cargado
 document.addEventListener('DOMContentLoaded', function () {
     actualizarMensajeBienvenida();
     inicializarCambioTema();
