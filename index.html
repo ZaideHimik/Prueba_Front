@@ -448,6 +448,49 @@
                 <p><strong>Horario de atención:</strong> Lunes a viernes, 10:00 a 18:00 hrs (CLT)</p>
                 <p><strong>Ubicación:</strong> Iquique, Chile (tienda digital, sin atención presencial)</p>
             </address>
+                        <!-- Formulario de suscripción -->
+            <section class="subscription">
+                <h3 class="subscription-title">Suscríbete a nuestras ofertas</h3>
+                <p class="subscription-text">
+                    Recibe promociones y novedades de ClaveGamer directamente en tu correo.
+                </p>
+
+                <form id="form-suscripcion" novalidate>
+                    <!-- Nombre -->
+                    <div class="form-field">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" />
+                        <p class="error-text" id="error-nombre"></p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" />
+                        <p class="error-text" id="error-email"></p>
+                    </div>
+
+                    <!-- Edad -->
+                    <div class="form-field">
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" name="edad" min="18" />
+                        <p class="error-text" id="error-edad"></p>
+                    </div>
+
+                    <!-- Términos -->
+                    <div class="form-field form-field-terminos">
+                        <label>
+                            <input type="checkbox" id="terminos" name="terminos" />
+                            Acepto recibir correos y he leído los términos.
+                        </label>
+                        <p class="error-text" id="error-terminos"></p>
+                    </div>
+
+                    <button type="submit" id="btn-suscribir" disabled>
+                        Suscribirme
+                    </button>
+                </form>
+            </section>
         </section>
     </main>
 
