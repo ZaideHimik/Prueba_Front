@@ -76,9 +76,11 @@ function inicializarFormularioSuscripcion() {
         // Validar nombre
         if (!inputNombre.value.trim()) {
             errorNombre.textContent = 'Por favor ingresa tu nombre.';
+            inputNombre.classList.add('input-error');
             esValido = false;
         } else {
             errorNombre.textContent = '';
+            inputNombre.classList.remove('input-error');
         }
 
         // Validar email con expresión regular simple
@@ -87,12 +89,15 @@ function inicializarFormularioSuscripcion() {
 
         if (!emailValor) {
             errorEmail.textContent = 'El correo es obligatorio.';
+            inputEmail.classList.add('input-error');
             esValido = false;
         } else if (!patronEmail.test(emailValor)) {
             errorEmail.textContent = 'Ingresa un correo válido.';
+            inputEmail.classList.add('input-error');
             esValido = false;
         } else {
             errorEmail.textContent = '';
+            inputEmail.classList.remove('input-error');
         }
 
         // Validar edad
@@ -100,12 +105,15 @@ function inicializarFormularioSuscripcion() {
 
         if (!inputEdad.value) {
             errorEdad.textContent = 'Ingresa tu edad.';
+            inputEdad.classList.add('input-error');
             esValido = false;
         } else if (isNaN(edadNumero) || edadNumero < 18) {
             errorEdad.textContent = 'Debes ser mayor de 18 años.';
+            inputEdad.classList.add('input-error');
             esValido = false;
         } else {
             errorEdad.textContent = '';
+            inputEdad.classList.remove('input-error');
         }
 
         // Validar términos
