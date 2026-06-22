@@ -1,9 +1,3 @@
-// Se ejecuta cuando el HTML ya está cargado
-document.addEventListener('DOMContentLoaded', function () {
-    actualizarMensajeBienvenida();
-    inicializarCambioTema();
-});
-
 // Inicializa el botón que cambia el tema claro/oscuro
 function inicializarCambioTema() {
     const botonTema = document.getElementById('boton-tema');
