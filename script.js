@@ -48,3 +48,99 @@ function actualizarMensajeBienvenida() {
     const saludo = obtenerSaludoSegunHora();
     parrafoBienvenida.textContent = saludo;
 }
+
+// ==============================
+// VALIDACIÓN FORMULARIO SUSCRIPCIÓN
+// ==============================
+
+document.addEventListener('DOMContentLoaded', function () {
+    actualizarMensajeBienvenida();
+    inicializarCambioTema();
+    inicializarFormularioSuscripcion(); // <-- añadimos esta línea
+});
+
+// Inicializa la lógica del formulario
+function inicializarFormularioSuscripcion() {
+    const form = document.getElementById('form-suscripcion');
+    if (!form) return;
+
+    const inputNombre = document.getElementById('nombre');
+    const inputEmail = document.getElementById('email');
+    const inputEdad = document.getElementById('edad');
+    const inputTerminos = document.getElementById('terminos');
+    const btnSuscribir = document.getElementById('btn-suscribir');
+
+    const errorNombre = document.getElementById('error-nombre');
+    const errorEmail = document.getElementById('error-email');
+    const errorEdad = document.getElementById('error-edad');
+    const errorTerminos = document.getElementById('error-terminos');
+
+    // Función que valida todo el formulario
+    function validarFormulario() {
+        let esValido = true;
+
+        // Validar nombre
+        if (!inputNombre.value.trim()) {
+            errorNombre.textContent = 'Por favor ingresa tu nombre.';
+            esValido = false;
+        } else {
+            errorNombre.textContent = '';
+        }
+
+        // Validar email con expresión regular simple
+        const emailValor = inputEmail.value.trim();
+        const patronEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+        if (!emailValor) {
+            errorEmail.textContent = 'El correo es obligatorio.';
+            esValido = false;
+        } else if (!patronEmail.test(emailValor)) {
+            errorEmail.textContent = 'Ingresa un correo válido.';
+            esValido = false;
+        } else {
+            errorEmail.textContent = '';
+        }
+
+        // Validar edad
+        const edadNumero = Number(inputEdad.value);
+
+        if (!inputEdad.value) {
+            errorEdad.textContent = 'Ingresa tu edad.';
+            esValido = false;
+        } else if (isNaN(edadNumero) || edadNumero < 18) {
+            errorEdad.textContent = 'Debes ser mayor de 18 años.';
+            esValido = false;
+        } else {
+            errorEdad.textContent = '';
+        }
+
+        // Validar términos
+        if (!inputTerminos.checked) {
+            errorTerminos.textContent = 'Debes aceptar los términos.';
+            esValido = false;
+        } else {
+            errorTerminos.textContent = '';
+        }
+
+        // Habilitar o deshabilitar botón
+        btnSuscribir.disabled = !esValido;
+    }
+
+    // Escuchamos cambios en los campos
+    inputNombre.addEventListener('input', validarFormulario);
+    inputEmail.addEventListener('input', validarFormulario);
+    inputEdad.addEventListener('input', validarFormulario);
+    inputTerminos.addEventListener('change', validarFormulario);
+
+    // Evitar envío real del formulario y mostrar mensaje
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        validarFormulario();
+
+        if (!btnSuscribir.disabled) {
+            alert('¡Gracias por suscribirte a ClaveGamer!');
+            form.reset();
+            btnSuscribir.disabled = true;
+        }
+    });
+}
