@@ -18,20 +18,20 @@
 
 /* Tema CLARO alternativo (se activa con la clase .tema-claro en <body>) */
 body.tema-claro {
-    --color-bg: #f3f4f6;              /* fondo general claro */
+    --color-bg: #f9fafb;              /* fondo general MUY claro */
     --color-bg-secondary: #ffffff;    /* tarjetas blancas */
     --color-text: #111827;            /* texto oscuro */
-    --color-text-muted: #4b5563;
+    --color-text-muted: #4b5563;      /* gris medio */
 }
 
 body.tema-claro .hero-content {
-    background: linear-gradient(135deg, #e0f2fe, #e5e7eb);
+    background: linear-gradient(135deg, #e0f2fe, #e5e7eb); /* hero claro */
     border-color: #3b82f6;
 }
 
 body.tema-claro .site-header,
 body.tema-claro .site-footer {
-    background-color: #111827;
+    background-color: #e5e7eb;       /* header y footer claros */
 }
 
 /* ===========================
