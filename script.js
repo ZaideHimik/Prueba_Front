@@ -1,8 +1,30 @@
-// Se ejecuta cuando el HTML ya está cargado
 document.addEventListener('DOMContentLoaded', function () {
     actualizarMensajeBienvenida();
+    inicializarCambioTema();
 });
 
+// Inicializa el botón que cambia el tema claro/oscuro
+function inicializarCambioTema() {
+    const botonTema = document.getElementById('boton-tema');
+    if (!botonTema) return;
+
+    botonTema.addEventListener('click', function () {
+        toggleTema(botonTema);
+    });
+}
+
+// Alterna la clase en <body> y el texto del botón
+function toggleTema(botonTema) {
+    document.body.classList.toggle('tema-claro');
+
+    const usandoTemaClaro = document.body.classList.contains('tema-claro');
+
+    if (usandoTemaClaro) {
+        botonTema.textContent = 'Cambiar a tema oscuro';
+    } else {
+        botonTema.textContent = 'Cambiar a tema claro';
+    }
+}
 // Calcula según la hora si es mañana, tarde o noche
 function obtenerSaludoSegunHora() {
     const ahora = new Date();
