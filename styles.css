@@ -485,6 +485,10 @@ body.tema-claro .form-field input[type="number"] {
     background-color: #ffffff;
 }
 
+.input-error {
+    border-color: #f87171;
+}
+
 /* Checkbox de términos en fila */
 .form-field-terminos {
     flex-direction: row;
