@@ -428,31 +428,104 @@ h1, h2, h3 {
 }
 
 /* ===========================
-   SECCIÓN CONTACTO
+   CONTACTO Y SUSCRIPCIÓN
    =========================== */
+
 .contact {
     padding-bottom: 3rem;
 }
 
-.contact p {
+.subscription {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.75rem;
+    border: 1px solid #1f2937;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.subscription-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.subscription-text {
     font-size: 0.95rem;
     color: var(--color-text-muted);
+    margin-bottom: 1rem;
 }
 
-/* Bloque de datos de contacto */
-.contact-info {
-    margin-top: 1rem;
-    font-style: normal;
+/* Campos del formulario */
+.form-field {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
-.contact-info p {
-    margin: 0.25rem 0;
+.form-field label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="number"] {
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #4b5563;
+    background-color: #020617;
+    color: var(--color-text);
+}
+
+/* Para tema claro, se verán bien gracias a las variables */
+body.tema-claro .form-field input[type="text"],
+body.tema-claro .form-field input[type="email"],
+body.tema-claro .form-field input[type="number"] {
+    background-color: #ffffff;
+}
+
+/* Checkbox de términos en fila */
+.form-field-terminos {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-field-terminos label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Mensajes de error */
+.error-text {
+    font-size: 0.8rem;
+    color: #f87171; /* rojo suave */
+    min-height: 1em; /* reserva espacio aunque no haya error */
+}
+
+/* Botón de suscripción */
+#btn-suscribir {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
     font-size: 0.95rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
 }
 
-.contact-info a[href^="mailto"],
-.contact-info a[href^="tel"] {
-    color: var(--color-primary-light);
+#btn-suscribir:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#btn-suscribir:not(:disabled):hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-1px);
 }
 
 /* ===========================
