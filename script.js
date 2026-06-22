@@ -27,7 +27,7 @@ function obtenerSaludoSegunHora() {
 
     if (hora >= 6 && hora < 12) {
         return 'Buenos días, gamer 👾';
-    } else if (hora >= 12 && hora < 20) {
+    } else if (hora >= 12 && hora < 18) {
         return 'Buenas tardes, gamer 🎮';
     } else {
         return 'Buenas noches, gamer 🌙';
