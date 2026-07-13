@@ -532,6 +532,25 @@ body.tema-claro .form-field input[type="number"] {
     transform: translateY(-1px);
 }
 
+.react-panel-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.react-panel-text {
+  margin: 12px 0 24px;
+  color: #cbd5e1;
+}
+
+.react-panel-frame {
+  width: 100%;
+  min-height: 1300px;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 18px;
+  background: #0f172a;
+}
+
 /* ===========================
    FOOTER
    =========================== */
