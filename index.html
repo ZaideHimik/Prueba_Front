@@ -494,21 +494,25 @@
         </section>
     </main>
 
-<section id="panel-react" class="react-panel-section">
-  <h2 class="section-title">Panel de gestión React</h2>
-  <p class="react-panel-text">
-    En esta sección se integran los componentes React solicitados: clima actual en Iquique,
-    indicadores económicos y bitácora con CRUD en LocalStorage.
-  </p>
+<section id="informacion-en-vivo" class="react-panel-section">
+  <div class="react-panel-header">
+    <p class="section-kicker">Módulo interactivo</p>
+    <h2 class="section-title">Información en vivo</h2>
+    <p class="section-description">
+      Clima actual, indicadores económicos y bitácora de comentarios para visitas.
+    </p>
+  </div>
 
-  <iframe
-    src="./react/"
-    title="Panel React ClaveGamer"
-    class="react-panel-frame"
-    loading="lazy">
-  </iframe>
-</section>
-    
+  <div class="react-block">
+    <div class="react-embed-frame">
+      <iframe
+        src="./react/"
+        title="Información en vivo ClaveGamer"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>  
     <!-- FOOTER -->
     <footer class="site-footer">
         <p class="footer-text">© 2026 ClaveGamer - Tienda de claves digitales ficticia para fines académicos.</p>
